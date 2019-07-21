@@ -121,7 +121,7 @@ public class StringEncrypter {
 		
 		// Password-Based Key Derivation function 2
 		SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
-		// 70000踰� �빐�떆�븯�뿬 256 bit 湲몄씠�쓽 �궎瑜� 留뚮뱺�떎.
+		// 40000번 해시하여 256 bit 길이의 키를 만든다.
 		PBEKeySpec spec = new PBEKeySpec(key.toCharArray(), saltBytes, 40000, 256);
 		
 		SecretKey secretKey = factory.generateSecret(spec);
